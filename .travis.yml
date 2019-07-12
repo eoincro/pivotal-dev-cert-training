@@ -12,15 +12,17 @@ jobs:
     - stage: build and publish
       language: java
       jdk: openjdk11
+      before_install:
+        chmod u+x
       install: skip
-      script: ./gradle clean build
+      script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
-        api_key: 5c02e3eb070458b6fa902a9354ce48ccb18cb8f4
+        api_key: $GITHUB_OAUTH_TOKEN
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
@@ -32,8 +34,8 @@ jobs:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
         provider: cloudfoundry
-        api: http://pal-tracker-eoin-cronin.cfapps.io/
-        username: cronie3
-        password: Eoin230195%
-        organization: cron-org
-        space: dev
+        api: $CF_API_URL
+        username: $CF_USERNAME
+        password: $CF_PASSWORD
+        organization: $CF_ORG
+        space: $CF_SPACE

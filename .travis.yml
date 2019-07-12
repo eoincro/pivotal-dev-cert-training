@@ -20,7 +20,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
-        api_key: $GITHUB_OAUTH_TOKEN
+        api_key: 006cce1571a99cc809fa098e6fe0ff1994fe1598
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
@@ -32,8 +32,8 @@ jobs:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
         provider: cloudfoundry
-        api: $CF_API_URL
-        username: $CF_USERNAME
-        password: $CF_PASSWORD
-        organization: $CF_ORG
-        space: $CF_SPACE
+        api: http://pal-tracker-eoin-cronin.cfapps.io/
+        username: cronie3
+        password: Eoin230195%
+        organization: cron-org
+        space: dev

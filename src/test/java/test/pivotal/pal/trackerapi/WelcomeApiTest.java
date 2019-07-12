@@ -1,6 +1,6 @@
 package test.pivotal.pal.trackerapi;
 
-import io.pivotal.pal.tracker.PalTrackerApplication;
+import io.pivotal.pal.tarcker.PalTrackerApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,6 @@ public class WelcomeApiTest {
     @Test
     public void exampleTest() {
         String body = this.restTemplate.getForObject("/", String.class);
-        assertThat(body).isEqualTo("Hello from test");
+        assertThat(body).isEqualTo("Testy test test");
     }
 }

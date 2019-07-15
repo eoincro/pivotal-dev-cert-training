@@ -12,8 +12,6 @@ jobs:
     - stage: build and publish
       language: java
       jdk: openjdk11
-      before_install:
-      - chmod +x ./gradlew
       install: skip
       before_script:
         - chmod +x ./gradlew

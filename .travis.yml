@@ -12,9 +12,9 @@ jobs:
     - stage: build and publish
       language: java
       jdk: openjdk11
-      install: skip
       before_script:
-        - chmod +x ./gradlew
+      - chmod +x ./gradlew
+      install: skip
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"

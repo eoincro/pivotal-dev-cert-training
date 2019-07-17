@@ -1,6 +1,6 @@
 package test.pivotal.pal.trackerapi;
 
-import io.pivotal.pal.tarcker.PalTrackerApplication;
+import io.pivotal.pal.tracker.PalTrackerApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
